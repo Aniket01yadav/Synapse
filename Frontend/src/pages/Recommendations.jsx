@@ -231,7 +231,7 @@ const Recommendations = () => {
     return (
     <div
       key={item._id}
-      className="group flex min-h-[310px] flex-col justify-between rounded-2xl border border-zinc-800 bg-[#111111] p-5 transition hover:-translate-y-1 hover:border-[#8B5CF6] hover:shadow-2xl hover:shadow-[#8B5CF6]/10"
+      className="group flex min-h-[310px] flex-col justify-between rounded-2xl border border-zinc-800 bg-[#111111] p-5 transition hover:border-[#8B5CF6] hover:shadow-2xl hover:shadow-[#8B5CF6]/10 sm:hover:-translate-y-1"
     >
       <div>
         <div className="flex items-start justify-between gap-4">
@@ -278,14 +278,14 @@ const Recommendations = () => {
   const visibleList = searchResults.length > 0 ? searchResults : recommendations;
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A]">
+    <div className="min-h-screen bg-[#0A0A0A] pb-24 lg:pb-0">
       <Navbar />
 
-      <div className="mx-auto max-w-7xl px-6 py-8">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
         <div className="mb-8 rounded-2xl border border-zinc-800 bg-[#111111] p-6">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-white">
+            <h1 className="text-2xl font-bold text-white sm:text-3xl">
               Friend Recommendations
             </h1>
             <p className="mt-2 max-w-2xl text-sm text-zinc-400">
@@ -305,7 +305,7 @@ const Recommendations = () => {
           </div>
         </div>
 
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex items-center justify-between gap-3">
           <h2 className="text-xl font-bold text-white">
             {searchQuery ? "Search Results" : "Best Matches"}
           </h2>

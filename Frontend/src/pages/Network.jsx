@@ -304,30 +304,30 @@ const Network = () => {
   }
 
   return (
-    <div className="h-screen bg-[#0A0A0A]">
+    <div className="min-h-screen bg-[#0A0A0A] pb-24 lg:pb-0">
       <Navbar />
 
-      <div className="flex h-[calc(100vh-64px)]">
+      <div className="flex flex-col lg:h-[calc(100vh-64px)] lg:flex-row">
         <Sidebar
           friendHobbies={friendHobbies}
         />
 
-        <div className="flex flex-col flex-1">
-          <div className="border-b border-zinc-800 bg-[#111111] p-4 flex items-center justify-between">
+        <div className="order-1 flex flex-1 flex-col lg:order-none">
+          <div className="flex flex-col gap-3 border-b border-zinc-800 bg-[#111111] p-4 sm:flex-row sm:items-center sm:justify-between">
             <h2 className="text-lg font-bold text-white">
               Network Graph
             </h2>
             <button
               onClick={handleRefresh}
               disabled={refreshing}
-              className="rounded-lg bg-[#8B5CF6] px-4 py-2 text-white transition hover:bg-[#A855F7] disabled:opacity-50"
+              className="w-full rounded-lg bg-[#8B5CF6] px-4 py-2 text-white transition hover:bg-[#A855F7] disabled:opacity-50 sm:w-auto"
             >
               {refreshing ? "Refreshing..." : "Refresh"}
             </button>
           </div>
 
           <div
-            className="flex-1"
+            className="h-[calc(100svh-220px)] min-h-[360px] w-full flex-none overflow-hidden lg:h-auto lg:min-h-0 lg:flex-1"
             onDragOver={onDragOver}
             onDrop={onDrop}
           >

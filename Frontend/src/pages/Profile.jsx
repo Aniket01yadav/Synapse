@@ -162,23 +162,23 @@ const Profile = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A]">
+    <div className="min-h-screen bg-[#0A0A0A] pb-24 lg:pb-0">
       <Navbar />
 
-      <div className="mx-auto max-w-7xl p-6">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
         <div className="grid gap-6 lg:grid-cols-3">
           <div className="rounded-3xl border border-zinc-800 bg-[#111111] p-6">
-            <div className="mb-6 flex items-center gap-4">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#F59E0B] text-3xl font-bold text-white">
+            <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#F59E0B] text-3xl font-bold text-white">
                 {profile?.username?.[0]?.toUpperCase()}
               </div>
 
-              <div>
-                <h2 className="text-2xl font-bold text-white">
+              <div className="min-w-0">
+                <h2 className="truncate text-2xl font-bold text-white">
                   {profile?.username}
                 </h2>
 
-                <p className="text-zinc-400">{profile?.email}</p>
+                <p className="break-words text-zinc-400">{profile?.email}</p>
               </div>
             </div>
 
@@ -212,7 +212,7 @@ const Profile = () => {
           <div className="rounded-3xl border border-zinc-800 bg-[#111111] p-6 lg:col-span-2">
             <h2 className="mb-6 text-xl font-bold text-white">Hobbies</h2>
 
-            <div className="mb-6 flex gap-2">
+            <div className="mb-6 flex flex-col gap-2 sm:flex-row">
               <input
                 type="text"
                 value={hobby}
@@ -225,7 +225,7 @@ const Profile = () => {
               <button
                 onClick={() => addHobby()}
                 disabled={hobbyLoading}
-                className="rounded-xl bg-gradient-to-r from-[#8B5CF6] to-[#A855F7] px-5 text-white"
+                className="rounded-xl bg-gradient-to-r from-[#8B5CF6] to-[#A855F7] px-5 py-3 text-white sm:py-0"
               >
                 {hobbyLoading ? "..." : "Add"}
               </button>

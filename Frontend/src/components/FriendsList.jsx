@@ -5,7 +5,7 @@ const FriendsList = ({
 }) => {
   return (
     <div className="rounded-3xl border border-zinc-800 bg-[#111111] p-6 lg:col-span-3">
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6 flex items-center justify-between gap-3">
         <h2 className="text-xl font-bold text-white">
           My Friends
         </h2>
@@ -24,7 +24,7 @@ const FriendsList = ({
           {friends.map((friend) => (
             <div
               key={friend._id}
-              className="flex items-center justify-between gap-4 rounded-xl bg-[#18181B] p-4"
+              className="flex flex-col gap-4 rounded-xl bg-[#18181B] p-4 sm:flex-row sm:items-center sm:justify-between"
             >
               <div className="flex min-w-0 items-center gap-3">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#F59E0B] font-bold text-white">
@@ -51,7 +51,7 @@ const FriendsList = ({
                   )
                 }
                 disabled={removingFriend === friend._id}
-                className="shrink-0 rounded-lg border border-red-500 px-3 py-2 text-sm font-medium text-red-400 transition hover:bg-red-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full shrink-0 rounded-lg border border-red-500 px-3 py-2 text-sm font-medium text-red-400 transition hover:bg-red-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
               >
                 {removingFriend === friend._id
                   ? "Removing..."

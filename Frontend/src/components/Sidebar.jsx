@@ -130,10 +130,16 @@ const Sidebar = ({
     });
 
   return (
-    <div className="h-full w-72 border-r border-zinc-800 bg-[#111111] p-4">
-      <h2 className="mb-4 text-xl font-bold text-white">
-        Hobbies
-      </h2>
+    <aside className="order-2 w-full border-b border-zinc-800 bg-[#111111] p-4 lg:order-none lg:h-full lg:w-72 lg:shrink-0 lg:overflow-y-auto lg:border-b-0 lg:border-r">
+      <div className="mb-4 flex items-center justify-between gap-3">
+        <h2 className="text-xl font-bold text-white">
+          Hobbies
+        </h2>
+
+        <span className="rounded-full bg-[#18181B] px-3 py-1 text-xs font-medium text-zinc-400">
+          {filteredHobbies.length}
+        </span>
+      </div>
 
       <input
         type="text"
@@ -147,7 +153,7 @@ const Sidebar = ({
         className="mb-4 w-full rounded-xl border border-zinc-700 bg-[#0A0A0A] px-4 py-3 text-white"
       />
 
-      <div className="space-y-3">
+      <div className="grid max-h-72 gap-3 overflow-y-auto pr-1 sm:grid-cols-2 lg:max-h-none lg:grid-cols-1 lg:space-y-0 lg:overflow-visible lg:pr-0">
         {filteredHobbies.map(
           (hobby) => (
             <div
@@ -192,7 +198,7 @@ const Sidebar = ({
           )
         )}
       </div>
-    </div>
+    </aside>
   );
 };
 
